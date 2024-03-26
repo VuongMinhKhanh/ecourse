@@ -5,6 +5,7 @@ from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from cloudinary.models import CloudinaryField
 
+
 class User(AbstractUser):
     avatar = CloudinaryField(null=True)
 
@@ -49,6 +50,7 @@ class Lesson(BaseModel):
 
     subject = models.CharField(max_length=255)
     content = RichTextField()
+    image = CloudinaryField(default=None)
     course = models.ForeignKey(
         Course, on_delete=models.CASCADE,
         related_name="lessons",
@@ -74,6 +76,7 @@ class Interaction(BaseModel):
 
     class Meta:
         abstract = True
+
 
 class Comment(Interaction):
     content = models.CharField(max_length=255)

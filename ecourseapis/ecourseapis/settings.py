@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses.apps.CoursesConfig',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'rest_framework',
+    'drf_yasg'
 ]
 
 AUTH_USER_MODEL = 'courses.User'
@@ -139,3 +141,10 @@ cloudinary.config(
     api_key="942979633865638",
     api_secret="tvG_b0DwtlcWPmdlvseBBN4IpTo"
 )
+
+
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS":
+        "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 2
+}
