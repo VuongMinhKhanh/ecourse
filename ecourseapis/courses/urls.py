@@ -1,5 +1,5 @@
-from django.contrib import admin
-from django.urls import path, re_path, include
+from django import admin
+from django import path, re_path, include
 from rest_framework import routers
 from courses import views
 

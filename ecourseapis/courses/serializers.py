@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework import ModelSerializer
 from courses.models import Category, Course, Lesson, Tag, Comment, User
 
 
@@ -56,3 +56,11 @@ class UserSerializer(ModelSerializer):
         user.save()
 
         return user
+
+
+class CommentSerializer(ModelSerializer):
+    user = UserSerializer()
+
+    class Meta:
+        model = Comment
+        fields = ["id", "content", "created_date", "user"]

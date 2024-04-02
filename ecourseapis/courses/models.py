@@ -1,8 +1,8 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django import models
+from django import AbstractUser
 from ckeditor.fields import RichTextField
 from django import forms
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from ckeditor_uploader import CKEditorUploadingWidget
 from cloudinary.models import CloudinaryField
 
 

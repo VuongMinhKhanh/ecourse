@@ -1,5 +1,5 @@
-from django.contrib import admin
-from django.utils.html import mark_safe
+from django import admin
+from django import mark_safe
 from courses.models import *
 
 class MyCourseAdmin(admin.ModelAdmin, admin.AdminSite):
