@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework',
-    'drf_yasg'
+    'drf_yasg',
+    'oauth2_provider'
 ]
 
 AUTH_USER_MODEL = 'courses.User'
@@ -142,9 +143,17 @@ cloudinary.config(
     api_secret="tvG_b0DwtlcWPmdlvseBBN4IpTo"
 )
 
-
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS":
         "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 2
+    "PAGE_SIZE": 2,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    )
 }
+
+CLIENT_ID = "4OZSYOIN1IaTjiI7AGIuLQHYvYtWaiaW0k5VcrWk"
+CLIENT_SECRET = "SgleblpofWCXs1Hfljh1ddqMwSuqksAlxZueUFY916UIjU0AzgowUbbrkQliri81XjO9hDLtzUJ8u4KKKcjyosWHLrmbBY14j7mOGy0k5BsPcT74WveIMTv89pgiWVEv"
+
+# id 4OZSYOIN1IaTjiI7AGIuLQHYvYtWaiaW0k5VcrWk
+# sc SgleblpofWCXs1Hfljh1ddqMwSuqksAlxZueUFY916UIjU0AzgowUbbrkQliri81XjO9hDLtzUJ8u4KKKcjyosWHLrmbBY14j7mOGy0k5BsPcT74WveIMTv89pgiWVEv

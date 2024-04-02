@@ -1,8 +1,8 @@
-from django import models
-from django import AbstractUser
+from django.db import models
+from django.contrib.auth.models import AbstractUser
 from ckeditor.fields import RichTextField
 from django import forms
-from ckeditor_uploader import CKEditorUploadingWidget
+# from ckeditor_uploader import CKEditorUploadingWidget
 from cloudinary.models import CloudinaryField
 
 
@@ -37,7 +37,7 @@ class Course(BaseModel):
 
 
 class CourseForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorUploadingWidget)
+    # description = forms.CharField(widget=CKEditorUploadingWidget)
 
     class Meta:
         model = Course

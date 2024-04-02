@@ -1,6 +1,7 @@
-from django import admin
-from django import mark_safe
+from django.contrib import admin
+from django.utils.html import mark_safe
 from courses.models import *
+
 
 class MyCourseAdmin(admin.ModelAdmin, admin.AdminSite):
     list_display = ["id", "name", "created_date", "updated_date", "active"]
@@ -14,9 +15,11 @@ class MyCourseAdmin(admin.ModelAdmin, admin.AdminSite):
         if course.image:
             return mark_safe(f"<img src='/static/{course.image.name}' width='400'/>")
 
+
 admin.site.register(Course, MyCourseAdmin)
 admin.site.register(Category, MyCourseAdmin)
 admin.site.register(Lesson)
 admin.site.register(Tag)
+admin.site.register(Comment)
 
 # Register your models here.
